@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>World Cuisine Explorer</title>
+        <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>World Cuisine Explorer</h1>
+        <p>Find recipes from around the world and discover their country of origin.</p>
+    </header>
+        
+        <section class="controls">
+            <input type="text" id="search-input" placeholder="Search a meal (e.g.Pasta)
+            <button id="search-btn">Search</button>
+            
+            <select id="category-select">
+                <option value="">All categories</option>
+            </select>
+
+            <select id="sort-select">
+                <option value="az">Name A-Z</option>
+                <option value="za">Name Z-A</option>
+            </select>
+
+             <select id="area-select">
+                <option value="">All countries</option>
+             </select>
+
+            <button id="favorites-btn">Show favorites</button>
+        </section>
+
+        <p id="status-message" role="status"></p>
+
+        <main id="results" class="grid"></main>
+
+
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <button id="close-modal">Close</button>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                Recipe data by
+                <a href="https://www.themealdb.com" target="_blank" rel="noopener">TheMealDB</a>
+                Country data by 
+                <a href="https://restcountries.com" target="_blank" rel="noopener">REST Countries</a>.
+            </p>
+        </footer>
+
+        <script src="js/api.js"></script>
+        <script src="js/ui.js"></script>
+        <script src="js/app.js"></script>
+</body>
+</html>
