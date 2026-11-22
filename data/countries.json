@@ -1,0 +1,10 @@
+{
+    "Algerian" : {"country": "Algeria", "capital": "Algiers", "language": "Arabic, Berber", "currency": "Algerian dinar", "flag": "dz" },
+    "Egyptian" : {"country": "Egypt", "capital": "Cairo", "language": "Arabic", "currency": "Egyptian pound", "flag": "eg" },
+    "Kenyan" : {"country": "Kenya", "capital": "Nairobi", "language": "Swahili, English", "currency": "Kenyan shilling", "flag": "ke" },
+    "Moroccan" : {"country": "Morocco", "capital": "Rabat", "language": "Arabic, Berber", "currency": "Moroccan dirham", "flag": "ma" },
+    "Tunisian" : {"country": "Tunisia", "capital": "Tunis", "language": "Arabic", "currency": "Tunisian dinar", "flag": "tn" },
+    "Italian" : {"country": "Italy", "capital": "Rome", "language": "Italian", "currency": "Euro", "flag": "it" },
+    "French" : {"country": "France", "capital": "Paris", "language": "French", "currency": "Euro", "flag": "fr" },
+    "Japanese" : {"country": "Japan", "capital": "Tokyo", "language": "Japanese", "currency": "Japanese yen", "flag": "jp" }
+}
