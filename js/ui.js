@@ -13,6 +13,18 @@ function isFavorite(id) {
     return favorites.some(function (meal) { return meal.idMeal === id; });
 }
 
+function toggleFavorite(meal, btn) {
+    if (isFavorite(meal.idMeal)) {
+        favorites = favorites.filter(function (m) { return m.idMeal !== meal.idMeal; });
+        btn.classList.remove("saved");
+        btn.textContent = "Save";
+    } else {
+        favorites.push(meal);
+        btn.classList.add("saved");
+        btn.textContent = "Saved";
+    }
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+}
 function showStatus(message, isError) {
     statusEl.textContent = message;
     statusEl.classList.toggle("error", Boolean(isError));
@@ -39,9 +51,9 @@ function renderMeals(meals) {
         const card = document.createElement("article");
         card.className = "card"; 
 
-        const heart = isFavorite(meal.idMeal) ? "Saved" : "Save";
+        const  saved = isFavorite(meal.idMeal);
         card.innerHTML =
-            '<button class="fav-btn" aria-label="Toggle favorites">' + heart + "</button>" +
+            '<button class="fav-btn' + (saved ? " saved" : "") + '" aria-label="Toggle favorites">' + (saved ? "Saved" : "Save")  + "</button>" +
             '<img src="' + meal.strMealThumb + '" alt="' + meal.strMeal + '">' +
             '<div class="card-info"><h3>' + meal.strMeal + "</h3>" +
             (meal.strArea ? '<span class="tag">' + meal.strArea + "</span>" : "") +
@@ -49,8 +61,7 @@ function renderMeals(meals) {
 
             card.querySelector(".fav-btn").addEventListener("click", function (event) {
                 event.stopPropagation();
-                toggleFavorite(meal);
-                renderMeals(meals);
+                toggleFavorite(meal, event.currentTarget);
             });
 
             card.addEventListener("click", function () { openModal(meal.idMeal); });
@@ -59,14 +70,6 @@ function renderMeals(meals) {
 
    }
 
-    function toggleFavorite(meal) {
-        if (isFavorite(meal.idMeal)) {
-            favorites = favorites.filter(function (m) {return m.idMeal !== meal.idMeal; });
-    } else {
-        favorites.push(meal);
-    }
-    saveFavorites();
-}
 
 async function openModal(id) {
     modalEl.classList.remove("hidden");

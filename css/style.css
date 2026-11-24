@@ -55,11 +55,13 @@ header {
     gap: 0.75rem;
     justify-content: center;
     padding: 1.8rem 1rem 1rem;
+    align-items : center;
 }
  .controls input,
  .controls select,
  .controls button {
-    padding: 0.75rem 1.2rem;
+    height : 52px;
+    padding: 0 1.2rem;
     font-family: inherit;
     font-size: 1rem;
     border: 2px solid var(--accent);
@@ -70,6 +72,16 @@ header {
 
 .controls input {
     min-width: 260px;
+}
+
+.controls select {
+    width: 190px;
+    appareance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width= '12' height='8' viewBox='0 0 12 8'%3E%Cpath d= 'M1 115 5 5-5' fill='none' stroke='%232b1d16' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.2rem center;
+    cursor: pointer;
 }
 
 .controls input:focus,
@@ -117,6 +129,8 @@ header {
 
 .card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     background: var(--card-bg);
     border-radius: var(--radius);
     overflow: hidden;
@@ -139,6 +153,9 @@ header {
 }
 
 .card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     padding: 1rem 1.2rem 1.3rem;
 
 }
@@ -146,17 +163,19 @@ header {
 .card-info h3 {
     margin: 0 0 0.5rem;
     font-size: 1.05rem;
+    min-height: 2.6em;
 }
 
 .card-info p {
     margin: 0;
     color: var(--muted);
     font-size: 0.9rem;
+    min-height: 2.6em;
 }
 
 .tag {
-    display: inline-block;
-    margin-top: 0.5rem;
+    align-self: flex-start;
+    margin-top: auto;
     padding: 0.2rem 0.7rem;
     border-radius: 999px;
     background: var(--deep);
@@ -173,10 +192,17 @@ header {
     border: none;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.92);
+    color: var(--deep);
     font-family: inherit;
     font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.fav-btn.saved {
+    background: var(--main);
+    color: white;
 }
 
 .modal {
@@ -237,7 +263,8 @@ footer a {
         font-size: 2.1rem;
     }
 
-    .controls input {
+    .controls input,
+    .controls select {
         min-width: 100%;
     }
 }
