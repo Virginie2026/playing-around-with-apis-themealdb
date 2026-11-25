@@ -11,7 +11,7 @@ Built for the **"Playing Around with APIs"** assignment by **Virginie** ([@Virgi
 | | |
 |---|---|
 | **Live site** (via load balancer) | https://www.virginie2026.tech |
-| **Demo video** (under 2 min) | [https://youtu.be/FxG4H5K1Mw4] |
+| **Demo video** (under 2 min) | https://youtu.be/FxG4H5K1Mw4 |
 | **Repository** | https://github.com/Virginie2026/playing-around-with-apis-themealdb |
 | **Web01** | http://35.179.128.255 |
 | **Web02** | http://18.169.158.197 |
